@@ -1,0 +1,37 @@
+﻿@model InfnetMVC.Models.Funcionario
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container">
+    <h1 class="mt-5 mb-4">Detalhes do Funcionário</h1>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Informações do Funcionário</h4>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-4">Nome:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Nome)</dd>
+
+                <dt class="col-sm-4">Endereço:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Endereco)</dd>
+
+                <dt class="col-sm-4">Telefone:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Telefone)</dd>
+
+                <dt class="col-sm-4">Email:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Email)</dd>
+
+                <dt class="col-sm-4">Data de Nascimento:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.DataNascimento)</dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">Editar</a>
+        <a asp-action="Index" class="btn btn-secondary">Voltar para a Lista</a>
+    </div>
+</div>

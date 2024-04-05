@@ -1,0 +1,67 @@
+﻿@model IEnumerable<InfnetMVC.Models.Funcionario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <h1 class="mt-5 mb-4">Lista de Funcionários</h1>
+
+    <p>
+        <a class="btn btn-primary mb-3" asp-action="Create">Novo Funcionário</a>
+    </p>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>
+                        Nome
+                    </th>
+                    <th>
+                        Endereço
+                    </th>
+                    <th>
+                        Telefone
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Data de Nascimento
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Endereco)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Telefone)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DataNascimento)
+                        </td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Ações">
+                                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+                                <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

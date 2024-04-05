@@ -1,0 +1,27 @@
+﻿@model InfnetMVC.Models.Departamento
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="container">
+    <h1 class="mt-5 mb-4">Excluir Departamento</h1>
+
+    <h3>Tem certeza de que deseja excluir este departamento?</h3>
+    <div>
+        <h4>Detalhes do Departamento</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">Nome:</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.Nome)</dd>
+            <dt class="col-sm-2">Localização:</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.Local)</dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Excluir" class="btn btn-danger" /> |
+            <a asp-action="Index" class="btn btn-secondary">Voltar para a Lista</a>
+        </form>
+    </div>
+</div>

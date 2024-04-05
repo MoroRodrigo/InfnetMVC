@@ -1,0 +1,24 @@
+﻿@model InfnetMVC.Models.Departamento
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container">
+    <h1 class="mt-5 mb-4">Detalhes do Departamento</h1>
+
+    <div>
+        <h4>Informações do Departamento</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">Nome:</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.Nome)</dd>
+            <dt class="col-sm-2">Localização:</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.Local)</dd>
+        </dl>
+    </div>
+    <div class="mt-3">
+        <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">Editar</a> |
+        <a asp-action="Index" class="btn btn-secondary">Voltar para a Lista</a>
+    </div>
+</div>

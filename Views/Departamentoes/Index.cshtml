@@ -1,0 +1,49 @@
+﻿@model IEnumerable<InfnetMVC.Models.Departamento>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <h1 class="mt-5 mb-4">Lista de Departamentos</h1>
+
+    <p>
+        <a class="btn btn-primary mb-3" asp-action="Create">Novo Departamento</a>
+    </p>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nome)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Local)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Local)
+                        </td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Ações">
+                                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+                                <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
